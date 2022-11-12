@@ -9,3 +9,6 @@ data_*/
 
 # VScode ignores
 .vscode
+
+# macos ignores
+.DS_Store
