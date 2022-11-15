@@ -7,9 +7,9 @@ var velocity: Vector2
 var bullet = preload('res://src/Objects/Projectiles/Bullet.tscn')
 var bullet_speed = 1500
 
-func _process(delta):
+func _process(_delta):
 	directionalMovement()
-	fireWeapon(delta)
+	fireWeapon()
 	
 
 # incredibly basic movement controller to give us a start
