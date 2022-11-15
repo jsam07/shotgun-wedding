@@ -5,3 +5,4 @@
 [node name="TheCathedral" type="Node2D"]
 
 [node name="Bride" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 0 )
