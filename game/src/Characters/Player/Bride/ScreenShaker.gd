@@ -8,7 +8,7 @@ func _ready():
 	
 	
 func _shake(duration := 0.8, magnitude := 8):
-	
+	print("Should shake")
 	while time < duration:
 		time += get_process_delta_time()
 		time = min(time, duration)
