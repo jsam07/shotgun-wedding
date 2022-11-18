@@ -18,3 +18,8 @@ offset = Vector2( -2, -0.5 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.5, 0 )
 shape = SubResource( 1 )
+
+[node name="KillTimer" type="Timer" parent="."]
+wait_time = 1.5
+
+[connection signal="timeout" from="KillTimer" to="." method="_on_KillTimer_timeout"]
