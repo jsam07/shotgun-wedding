@@ -32,7 +32,7 @@ func directionalMovement ():
 	velocity = move_and_slide(velocity)
 
 func fireWeapon():
-	if Input.get_action_strength("weapon_fire"):
+	if Input.get_action_strength("shoot"):
 		if time_since_last_shot > fire_rate:
 			time_since_last_shot = 0
 			var bullet_instance = bullet.instance()
