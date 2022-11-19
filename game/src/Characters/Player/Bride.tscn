@@ -4,7 +4,7 @@
 [ext_resource path="res://src/Characters/Player/BrideController.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 11.5, 16 )
+extents = Vector2( 10.5, 16 )
 
 [node name="Bride" type="KinematicBody2D"]
 position = Vector2( 186, 240 )
