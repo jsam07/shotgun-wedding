@@ -1,17 +1,24 @@
 extends Node2D
+class_name Bullet
 
-var bulletSpeed = 800
-var movement = Vector2()
-var mouse_pos = null
-var angle = 0
+export (int) var speed = 10
+
+var direction := Vector2.ZERO
+onready var kill_timer = $KillTimer
 
 func _ready():
-	mouse_pos = get_local_mouse_position()
-	angle = get_angle_to(get_global_mouse_position())
+	kill_timer.start()
 
-func _physics_process(delta):
-	movement = movement.move_toward(mouse_pos, delta)
-	movement = movement.normalized()
-	
-	position = position + (movement * bulletSpeed * delta)
-	rotation = angle
+func _physics_process(delta: float) -> void:
+	if direction != Vector2.ZERO:
+		var velocity = direction * speed
+		global_position += velocity
+		
+
+func set_direction(direction: Vector2) -> void:
+	self.direction = direction
+	rotation += direction.angle()
+
+
+func _on_KillTimer_timeout():
+	queue_free()
