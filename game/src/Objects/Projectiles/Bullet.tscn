@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/Projectiles/bullet.png" type="Texture" id=1]
+[ext_resource path="res://assets/projectiles/bullet.png" type="Texture" id=1]
 [ext_resource path="res://src/Objects/Projectiles/Bullet.gd" type="Script" id=2]
+[ext_resource path="res://src/Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.5, 1.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 3.5, 1.25 )
 
 [node name="Bullet" type="Node2D"]
 script = ExtResource( 2 )
@@ -19,7 +23,15 @@ offset = Vector2( -2, -0.5 )
 position = Vector2( -1.5, 0 )
 shape = SubResource( 1 )
 
+[node name="Hitbox" parent="." instance=ExtResource( 3 )]
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( -1.5, 0 )
+shape = SubResource( 2 )
+
 [node name="KillTimer" type="Timer" parent="."]
 wait_time = 1.5
 
 [connection signal="timeout" from="KillTimer" to="." method="_on_KillTimer_timeout"]
+
+[editable path="Hitbox"]

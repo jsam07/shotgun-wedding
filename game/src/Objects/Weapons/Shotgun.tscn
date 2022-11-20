@@ -11,3 +11,10 @@ script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
 texture = SubResource( 1 )
+
+[node name="MuzzleFlash" parent="." index="2"]
+position = Vector2( 24, 1.13687e-13 )
+scale = Vector2( 0.347, 0.347 )
+
+[node name="AttackCooldown" parent="." index="5"]
+one_shot = true

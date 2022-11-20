@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/characters/bride/ShotgunBride1.png" type="Texture" id=1]
 [ext_resource path="res://src/Characters/Player/Bride/Bride.gd" type="Script" id=2]
@@ -7,10 +7,15 @@
 [ext_resource path="res://src/Characters/Player/Bride/Health.gd" type="Script" id=5]
 [ext_resource path="res://src/Characters/Player/Bride/ScreenShaker.gd" type="Script" id=6]
 [ext_resource path="res://src/Objects/Projectiles/Bullet.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
+[sub_resource type="CapsuleShape2D" id=2]
+height = 12.0
+
 [node name="Bride" type="KinematicBody2D"]
+collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -26,6 +31,13 @@ shape = SubResource( 1 )
 
 [node name="Health" type="Node2D" parent="."]
 script = ExtResource( 5 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 8 )]
+position = Vector2( 40, 16 )
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( -40, -16 )
+shape = SubResource( 2 )
 
 [node name="CameraTransform" type="RemoteTransform2D" parent="."]
 
@@ -47,3 +59,5 @@ smoothing_enabled = true
 
 [node name="ScreenShaker" type="Node" parent="Camera"]
 script = ExtResource( 6 )
+
+[editable path="Hitbox"]

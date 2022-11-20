@@ -1,16 +1,13 @@
 extends "res://src/Objects/Weapons/Weapon.gd"
 
+onready var attack_cooldown: Timer = $AttackCooldown
+onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func start_cooldown():
+	attack_cooldown.start()
+	
+func can_shoot() -> bool:
+	return attack_cooldown.is_stopped()
+	
+func play_animation():
+	animation_player.play("muzzle_flash")
