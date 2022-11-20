@@ -20,9 +20,11 @@ func set_direction(direction: Vector2) -> void:
 	rotation += direction.angle()
 	
 	
-func _on_Bullet_body_entered(body: Node) -> void:
-	print("Bullet collided w/ sumn")
-
+func destroy() -> void:
+	queue_free()
+	
+func _on_Hitbox_area_entered(area):
+	destroy()
 
 func _on_KillTimer_timeout():
-	queue_free()
+	destroy()
