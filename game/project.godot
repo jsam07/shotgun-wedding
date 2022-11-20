@@ -20,6 +20,11 @@ _global_script_classes=[ {
 "path": "res://src/Objects/Projectiles/Bullet.gd"
 }, {
 "base": "Node2D",
+"class": "TheCathedral",
+"language": "GDScript",
+"path": "res://src/Levels/TheCathedral.gd"
+}, {
+"base": "Node2D",
 "class": "Weapon",
 "language": "GDScript",
 "path": "res://src/Objects/Weapons/Weapon.gd"
@@ -32,6 +37,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Bride": "",
 "Bullet": "",
+"TheCathedral": "",
 "Weapon": "",
 "WeaponManager": ""
 }

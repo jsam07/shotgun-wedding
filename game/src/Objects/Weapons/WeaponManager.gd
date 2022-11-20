@@ -26,7 +26,7 @@ func reload() -> void:
 	
 	
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_released("shoot"):
+	if event.is_action_pressed("shoot"):
 		shoot()
 		
 		
@@ -34,6 +34,7 @@ func shoot():
 	var bullet_instance = Bullet.instance()
 	var direction = (weapon_direction.global_position - end_of_gun.global_position).normalized()
 	
+	#	get_parent().screen_shaker._shake(0.2, 2)
 	emit_signal("player_fired_bullet", bullet_instance, end_of_gun.global_position, direction)
-#	get_parent().screen_shaker._shake(0.2, 2)
+
 

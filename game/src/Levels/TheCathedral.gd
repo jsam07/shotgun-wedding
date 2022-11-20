@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name TheCathedral
 
 onready var bullet_manager = $BulletManager
 onready var weapon_manager = $Bride/WeaponManager
