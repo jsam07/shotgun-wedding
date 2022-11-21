@@ -1,7 +1,37 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/Objects/Weapons/Weapon.gd" type="Script" id=1]
 [ext_resource path="res://assets/weapons/Shotgun.png" type="Texture" id=2]
+[ext_resource path="res://assets/projectiles/projectile_asset_pack.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "muzzle_flash"
+length = 0.05
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("MuzzleFlash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MuzzleFlash:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.347, 0.347 ), Vector2( 0.16, 0.5 ) ]
+}
 
 [node name="Weapon" type="Node2D"]
 script = ExtResource( 1 )
@@ -17,10 +47,19 @@ region_rect = Rect2( 4, 10, 24, 10 )
 position = Vector2( 18, 0 )
 
 [node name="MuzzleFlash" type="Sprite" parent="."]
-
-[node name="AttackCooldown" type="Timer" parent="."]
+visible = false
+position = Vector2( 23, 0 )
+rotation = -1.5708
+scale = Vector2( 0.16, 0.5 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 324, 334, 20, 25 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/muzzle_flash = SubResource( 1 )
 
 [node name="WeaponDirection" type="Position2D" parent="."]
 position = Vector2( 19, 0 )
+
+[node name="AttackCooldown" type="Timer" parent="."]
+wait_time = 0.2

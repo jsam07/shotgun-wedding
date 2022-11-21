@@ -1,7 +1,7 @@
 extends Node2D
 class_name Bullet
 
-export (int) var speed = 10
+export (int) var speed = 5
 
 var direction := Vector2.ZERO
 onready var kill_timer = $KillTimer
@@ -18,7 +18,13 @@ func _physics_process(delta: float) -> void:
 func set_direction(direction: Vector2) -> void:
 	self.direction = direction
 	rotation += direction.angle()
-
+	
+	
+func destroy() -> void:
+	queue_free()
+	
+func _on_Hitbox_area_entered(area):
+	destroy()
 
 func _on_KillTimer_timeout():
-	queue_free()
+	destroy()

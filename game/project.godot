@@ -20,6 +20,31 @@ _global_script_classes=[ {
 "path": "res://src/Objects/Projectiles/Bullet.gd"
 }, {
 "base": "Node2D",
+"class": "BulletManager",
+"language": "GDScript",
+"path": "res://src/Objects/Projectiles/BulletManager.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://src/Enemies/Enemy.gd"
+}, {
+"base": "Node2D",
+"class": "EnemyManager",
+"language": "GDScript",
+"path": "res://src/Characters/Enemies/EnemyManager.gd"
+}, {
+"base": "Node2D",
+"class": "PlayerManager",
+"language": "GDScript",
+"path": "res://src/Characters/Player/PlayerManager.gd"
+}, {
+"base": "Node2D",
+"class": "TheCathedral",
+"language": "GDScript",
+"path": "res://src/Levels/TheCathedral.gd"
+}, {
+"base": "Node2D",
 "class": "Weapon",
 "language": "GDScript",
 "path": "res://src/Objects/Weapons/Weapon.gd"
@@ -32,6 +57,11 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Bride": "",
 "Bullet": "",
+"BulletManager": "",
+"Enemy": "",
+"EnemyManager": "",
+"PlayerManager": "",
+"TheCathedral": "",
 "Weapon": "",
 "WeaponManager": ""
 }
@@ -51,6 +81,7 @@ window/stretch/shrink=2.0
 [global]
 
 "texture filter"=true
+layer=false
 
 [gui]
 
