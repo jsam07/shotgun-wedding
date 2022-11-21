@@ -1,9 +1,10 @@
 extends Node2D
 class_name TheCathedral
 
-onready var bullet_manager = $BulletManager
-onready var weapon_manager = $Bride/WeaponManager
+onready var bullet_manager: BulletManager = $BulletManager
+onready var player_manager: PlayerManager = $PlayerManager
 
 
 func _ready() -> void:
-	weapon_manager.connect("player_fired_bullet", bullet_manager, "handle_bullet_spawned")
+	player_manager.initialize(bullet_manager)
+	
