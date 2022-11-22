@@ -12,3 +12,4 @@ texture = ExtResource( 2 )
 visible = false
 
 [editable path="Hurtbox"]
+[editable path="PlayerDetectionZone"]
