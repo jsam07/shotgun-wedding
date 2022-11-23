@@ -24,11 +24,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Objects/Projectiles/BulletManager.gd"
 }, {
-"base": "KinematicBody2D",
-"class": "Enemy",
-"language": "GDScript",
-"path": "res://src/Enemies/Enemy.gd"
-}, {
 "base": "Node2D",
 "class": "EnemyManager",
 "language": "GDScript",
@@ -58,7 +53,6 @@ _global_script_class_icons={
 "Bride": "",
 "Bullet": "",
 "BulletManager": "",
-"Enemy": "",
 "EnemyManager": "",
 "PlayerManager": "",
 "TheCathedral": "",
