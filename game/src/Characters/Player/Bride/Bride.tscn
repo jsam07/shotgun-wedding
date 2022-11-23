@@ -51,6 +51,7 @@ rotation = 6.28319
 scale = Vector2( 0.65, 0.65 )
 
 [node name="Camera" type="Camera2D" parent="."]
+current = true
 limit_left = 0
 limit_top = 0
 limit_bottom = 720
