@@ -84,6 +84,7 @@ window/stretch/shrink=2.0
 
 "texture filter"=true
 layer=false
+stretch=false
 
 [gui]
 
