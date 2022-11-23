@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bullet.png-8d14110c0832606021eae558168156b2.stex"
+path="res://.import/crosshair.png-ae9c79047d9fbbd8b8f917d8502570cb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Projectiles/bullet.png"
-dest_files=[ "res://.import/bullet.png-8d14110c0832606021eae558168156b2.stex" ]
+source_file="res://assets/ui/crosshair.png"
+dest_files=[ "res://.import/crosshair.png-ae9c79047d9fbbd8b8f917d8502570cb.stex" ]
 
 [params]
 

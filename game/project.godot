@@ -76,6 +76,8 @@ config/icon="res://icon.png"
 
 window/size/width=1280
 window/size/height=720
+mouse_cursor/custom_image="res://assets/ui/crosshair.png"
+mouse_cursor/custom_image_hotspot=Vector2( 8, 8 )
 window/stretch/shrink=2.0
 
 [global]
