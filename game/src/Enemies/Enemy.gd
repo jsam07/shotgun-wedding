@@ -1,4 +1,4 @@
-extends Enemy
+extends KinematicBody2D
 class_name Enemy
 
 var knockback = Vector2.ZERO

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/shotgun_reload.mp3-feb2f20bf607d0348e2593091b5b1e06.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/weapons/shotgun/shotgun_reload.mp3"
+dest_files=[ "res://.import/shotgun_reload.mp3-feb2f20bf607d0348e2593091b5b1e06.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

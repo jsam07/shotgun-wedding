@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/characters/bride/ShotgunBride1.png" type="Texture" id=1]
 [ext_resource path="res://src/Characters/Player/Bride/Bride.gd" type="Script" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://src/Objects/Weapons/Shotgun.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Characters/Player/Bride/Health.gd" type="Script" id=5]
 [ext_resource path="res://src/Characters/Player/Bride/ScreenShaker.gd" type="Script" id=6]
-[ext_resource path="res://src/Objects/Projectiles/Bullet.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Hitboxes and Hurtboxes/Hitbox.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -43,7 +42,6 @@ shape = SubResource( 2 )
 
 [node name="WeaponManager" type="Node2D" parent="."]
 script = ExtResource( 3 )
-Bullet = ExtResource( 7 )
 
 [node name="Shotgun" parent="WeaponManager" instance=ExtResource( 4 )]
 position = Vector2( 8, 3 )
