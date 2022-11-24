@@ -14,7 +14,7 @@ func initialize(bullet_manager: BulletManager):
 	connect_weapon_manager(bullet_manager)
 	
 func connect_weapon_manager(bullet_manager: BulletManager):
-	weapon_manager.connect("player_fired_bullet", bullet_manager, "handle_bullet_spawned")
+	weapon_manager.connect_weapons(bullet_manager)
 	
 	
 func spawn_player(x: float, y: float) -> void:

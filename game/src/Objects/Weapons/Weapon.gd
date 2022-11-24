@@ -1,20 +1,22 @@
 extends Node2D
 class_name Weapon
 
+# SIGNALS
+signal player_fired_bullet(bullet, position, direction)
+
+var reloading = false
+onready var end_of_gun: Position2D
+onready var weapon_direction: Position2D
 
 func _ready():
+	end_of_gun = get_node("EndOfWeapon")
+	weapon_direction = get_node("WeaponDirection")
+	
+func initialize() -> void:
 	pass
-#	set_as_toplevel(true)
-	
-	
-func initialize():
-	pass
-	
 	
 func start_reload():
 	pass
-	
-
 	
 	
 func _stop_reload():
