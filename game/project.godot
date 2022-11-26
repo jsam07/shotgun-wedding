@@ -40,11 +40,6 @@ _global_script_classes=[ {
 "path": "res://src/Characters/Player/PlayerManager.gd"
 }, {
 "base": "Node2D",
-"class": "Shotgun",
-"language": "GDScript",
-"path": "res://src/Objects/Weapons/Shotgun.gd"
-}, {
-"base": "Node2D",
 "class": "TheCathedral",
 "language": "GDScript",
 "path": "res://src/Levels/TheCathedral.gd"
@@ -66,7 +61,6 @@ _global_script_class_icons={
 "Enemy": "",
 "EnemyManager": "",
 "PlayerManager": "",
-"Shotgun": "",
 "TheCathedral": "",
 "Weapon": "",
 "WeaponManager": ""

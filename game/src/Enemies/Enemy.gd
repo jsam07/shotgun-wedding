@@ -19,6 +19,9 @@ enum {
 onready var sprite = $Sprite
 onready var stats = $Stats
 onready var playerDetectionZone = $PlayerDetectionZone
+onready var current_acceleration = ACCELERATION;
+onready var current_max_speed = MAX_SPEED;
+
 
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
@@ -38,8 +41,7 @@ func _physics_process(delta):
 			
 			if player != null:
 				var direction = (player.global_position - global_position).normalized()
-				# Moving towards Vector2.RIGHT because the character controller isn't completed
-				velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * delta)
+				velocity = velocity.move_toward(direction * current_max_speed, current_acceleration * delta)
 			else:
 				state = IDLE
 				
@@ -47,14 +49,13 @@ func _physics_process(delta):
 			
 func seek_player():
 	if playerDetectionZone.can_see_player():
+		current_acceleration = ACCELERATION * 3
+		current_max_speed = MAX_SPEED * 2
 		state = CHASE;
 
 func _on_Hurtbox_area_entered(area):
-	# Need to import bullet damage
 	stats.health -= area.damage
 
-	# Used to knockback the zombie in the apporpiate direction
-	# knockback = area.knockback_vector * 120
 	knockback = Vector2.RIGHT * 20
 
 func _on_Stats_no_health():
