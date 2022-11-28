@@ -11,6 +11,7 @@ extents = Vector2( 3.5, 1.5 )
 extents = Vector2( 3.5, 1.25 )
 
 [node name="Bullet" type="Node2D"]
+z_index = -99
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -18,12 +19,15 @@ texture = ExtResource( 1 )
 offset = Vector2( -2, -0.5 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+collision_layer = 0
+collision_mask = 9
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 position = Vector2( -1.5, 0 )
 shape = SubResource( 1 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 3 )]
+z_index = 1
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2( -1.5, 0 )
